@@ -55,39 +55,29 @@ chrome.action.onClicked.addListener(async (tab) => {
               let clipboardSuccess = false;
               
               try {
-                // Method 1: Try navigator.clipboard first
-                await navigator.clipboard.writeText(result.sRGBHex);
-                clipboardSuccess = true;
-                console.log('Color copied to clipboard using navigator.clipboard:', result.sRGBHex);
-              } catch (clipErr) {
-                console.warn('navigator.clipboard failed:', clipErr);
+                // Focus the window first
+                window.focus();
                 
-                // Method 2: Try document.execCommand fallback
-                try {
-                  // Focus the window first
-                  window.focus();
-                  
-                  const textArea = document.createElement('textarea');
-                  textArea.value = result.sRGBHex;
-                  textArea.style.position = 'fixed';
-                  textArea.style.left = '-999999px';
-                  textArea.style.top = '-999999px';
-                  document.body.appendChild(textArea);
-                  textArea.focus();
-                  textArea.select();
-                  
-                  const successful = document.execCommand('copy');
-                  document.body.removeChild(textArea);
-                  
-                  if (successful) {
-                    clipboardSuccess = true;
-                    console.log('Color copied to clipboard using execCommand:', result.sRGBHex);
-                  } else {
-                    console.warn('execCommand copy failed');
-                  }
-                } catch (execErr) {
-                  console.warn('execCommand clipboard failed:', execErr);
+                const textArea = document.createElement('textarea');
+                textArea.value = result.sRGBHex;
+                textArea.style.position = 'fixed';
+                textArea.style.left = '-999999px';
+                textArea.style.top = '-999999px';
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                
+                const successful = document.execCommand('copy');
+                document.body.removeChild(textArea);
+                
+                if (successful) {
+                  clipboardSuccess = true;
+                  console.log('Color copied to clipboard using execCommand:', result.sRGBHex);
+                } else {
+                  console.warn('execCommand copy failed');
                 }
+              } catch (execErr) {
+                console.warn('execCommand clipboard failed:', execErr);
               }
               
               return { success: true, color: result.sRGBHex, clipboardSuccess };
