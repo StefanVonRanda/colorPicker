@@ -55,7 +55,6 @@ A simple and intuitive color picker Chrome extension with eyedropper functionali
 colorPicker/
 ├── manifest.json          # Extension configuration
 ├── background.js          # Service worker for handling toolbar clicks
-├── content.js             # Eyedropper content script with loupe cursor
 ├── icon.png               # Extension icon
 └── README.md              # This file
 ```
