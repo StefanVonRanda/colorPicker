@@ -1,16 +1,16 @@
 # Color Picker Chrome Extension
 
-A simple and intuitive color picker Chrome extension with eyedropper functionality.
+A dead simple color picker extension for chromium-based browsers.
+Just click the eyedropper icon in the taskbar and click anywhere to copy a color hex code into your clipboard.
 
 ## Features
 
-- **Color Picker**: Interactive color picker with live preview
 - **Eyedropper Tool**: Pick colors directly from any webpage
-- **Multiple Formats**: Support for HEX, RGB, and HSL color formats
-- **Color History**: Keeps track of recently picked colors
 - **Copy to Clipboard**: Easy one-click copying of color values
 
 ## Installation
+
+I didn't submit this to the Chrome Web Store yet, so you'll have to install it manually.
 
 ### Install as Developer Extension
 
@@ -18,8 +18,8 @@ A simple and intuitive color picker Chrome extension with eyedropper functionali
    - Clone or download this repository
    - Or download as ZIP and extract
 
-2. **Open Chrome Extensions Page**
-   - Open Google Chrome
+2. **Open Extensions Page**
+   - Open your chromium-based browser
    - Navigate to `chrome://extensions/`
    - Or go to Chrome Menu → More Tools → Extensions
 
@@ -31,14 +31,14 @@ A simple and intuitive color picker Chrome extension with eyedropper functionali
    - Select the folder containing the extension files
    - The extension should now appear in your extensions list
 
-5. **Pin the Extension** (Optional)
-   - Click the puzzle piece icon in the Chrome toolbar
+5. **Pin the Extension** (Recommended)
+   - Click the puzzle piece icon in the toolbar
    - Find "Color Picker" and click the pin icon to keep it visible
 
 ## Usage
 
 ### Color Picking
-1. Click the Color Picker extension icon in your Chrome toolbar
+1. Click the Color Picker extension icon in your toolbar
 2. Your cursor will immediately turn into a loupe/magnifying glass
 3. Move your cursor over any element on the webpage to preview the color
 4. Click on the desired color to pick it - the color is automatically copied to your clipboard
