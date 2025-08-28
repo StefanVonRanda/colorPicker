@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Color Picker",
+  "version": "1.0",
+  "description": "A simple color picker extension with eyedropper functionality",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "action": {
+    "default_title": "Color Picker - Click to pick color",
+    "default_icon": "icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  }
+}
